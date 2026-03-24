@@ -1,15 +1,20 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const GEMINI_API_KEY = process.env.GEMINI_KEY
-
-const ai = new GoogleGenerativeAI(GEMINI_API_KEY)
 
 export class GeminiWidgetController {
     async create(req, res) {
-
+        
         try {
+            
+            const { imageURL, apikey } = req.body
+            
+            const GEMINI_API_KEY = apikey || process.env.GEMINI_KEY
+            
+            if(!GEMINI_API_KEY) {
+                return res.status(400).json({ error: "API key is required" })
+            }
 
-            const { imageURL } = req.body
+            const ai = new GoogleGenerativeAI(GEMINI_API_KEY)
 
             const model = ai.getGenerativeModel({ model: "gemini-3-flash-preview" })
 

@@ -1,0 +1,307 @@
+/* ==========================================
+   SISTEMA DE DESIGN - CLIPMAKER
+   Lead Product Designer approach
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ========== Base ========== */
+:root {
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+}
+
+* {
+    @apply scroll-smooth;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+    @apply antialiased;
+}
+
+/* ========== Animações GSAP & Customizadas ========== */
+
+@keyframes blob {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(20px, -50px) scale(1.1);
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+        transform: translate(50px, 50px) scale(1.05);
+    }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* ========== Gradient Animations ========== */
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+}
+
+/* ========== Soft Shadow System (8pt scale) ========== */
+
+.shadow-soft-xs {
+    box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+}
+
+.shadow-soft-sm {
+    box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.05),
+                0 2px 4px 0 rgba(15, 23, 42, 0.1);
+}
+
+.shadow-soft-md {
+    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.1),
+                0 2px 4px -1px rgba(15, 23, 42, 0.06);
+}
+
+.shadow-soft-lg {
+    box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1),
+                0 4px 6px -2px rgba(15, 23, 42, 0.05);
+}
+
+.shadow-soft-xl {
+    box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1),
+                0 10px 10px -5px rgba(15, 23, 42, 0.04);
+}
+
+/* ========== Input Focus States ========== */
+
+input::placeholder {
+    @apply text-slate-600 transition-colors duration-300;
+}
+
+input:focus::placeholder {
+    @apply text-slate-500;
+}
+
+/* ========== Interactive Components States ========== */
+
+button, [role="button"], a {
+    @apply transition-all duration-300 ease-out;
+}
+
+/* ========== Scrollbar Styling ========== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+}
+
+/* ========== Selection Color ========== */
+
+::selection {
+    @apply bg-cyan-500/30 text-white;
+}
+
+/* ========== Typography Hierarchy ========== */
+
+h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-bold;
+}
+
+h1 {
+    @apply text-slate-900 dark:text-white leading-tight;
+}
+
+h2 {
+    @apply text-slate-900 dark:text-white leading-snug;
+}
+
+h3 {
+    @apply text-slate-800 dark:text-slate-100 leading-snug;
+}
+
+p {
+    @apply text-slate-600 dark:text-slate-300 leading-relaxed;
+}
+
+.text-caption {
+    @apply text-xs font-medium tracking-wider text-slate-500 uppercase;
+}
+
+/* ========== Glass Morphism Effect ========== */
+
+.glass-effect {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+.glass-effect-hover {
+    @apply glass-effect hover:bg-white/10 hover:border-white/20 transition-all duration-300;
+}
+
+/* ========== Responsive Grid (8pt rhythm) ========== */
+
+@layer utilities {
+    .grid-flow-dense-auto {
+        grid-auto-flow: dense;
+        grid-auto-rows: auto;
+    }
+    
+    /* Spacing 8pt scale */
+    .space-8pt {
+        gap: 8px;
+    }
+    .space-16pt {
+        gap: 16px;
+    }
+    .space-24pt {
+        gap: 24px;
+    }
+    .space-32pt {
+        gap: 32px;
+    }
+}
+
+/* ========== Micro-interactions ========== */
+
+.hover-scale-subtle {
+    @apply transition-transform duration-300 ease-out hover:scale-[1.02];
+}
+
+.hover-lift {
+    @apply transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1;
+}
+
+.active-press {
+    @apply active:scale-95 transition-transform duration-150;
+}
+
+/* ========== Loading Spinner ========== */
+
+@keyframes spin-smooth {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-smooth {
+    animation: spin-smooth 1.5s linear infinite;
+}
+
+/* ========== Progress Bar Animation ========== */
+
+@keyframes progress-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse-subtle {
+    animation: progress-pulse 2s ease-in-out infinite;
+}
+
+/* ========== Accessible Focus States ========== */
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    @apply outline-2 outline-offset-2 outline-cyan-500;
+}
+
+/* ========== Dark Mode Optimized ========== */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @apply bg-slate-950;
+        color-scheme: dark;
+    }
+}
+
+/* ========== Reduced Motion ========== */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ========== Responsive Typography ========== */
+
+@media (max-width: 640px) {
+    h1 {
+        @apply text-2xl;
+    }
+    h2 {
+        @apply text-xl;
+    }
+    h3 {
+        @apply text-lg;
+    }
+}
+
+/* ========== Custom Utilities ========== */
+
+.text-gradient {
+    @apply bg-gradient-to-r bg-clip-text text-transparent;
+}
+
+.border-gradient {
+    position: relative;
+}
+
+.border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(to right, rgba(34, 197, 94, 0.5), rgba(34, 197, 94, 0));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}

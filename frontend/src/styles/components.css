@@ -1,0 +1,293 @@
+/* ============================================
+   COMPONENTS LIBRARY - Snippets Reutilizáveis
+   ============================================ */
+
+/* ========== CARD VARIANTS ========== */
+
+/* Primary Card (Glassmorphism) */
+.card-primary {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300;
+}
+
+.card-primary:hover {
+    @apply bg-white/10 border-white/20;
+}
+
+/* Secondary Card (Border Only) */
+.card-secondary {
+    @apply border border-slate-700 rounded-2xl p-6 hover:border-slate-600 transition-colors duration-300;
+}
+
+/* Elevated Card (Soft Shadow) */
+.card-elevated {
+    @apply bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300;
+}
+
+/* ========== BUTTON VARIANTS ========== */
+
+/* Button Primary (Gradient) */
+.btn-primary {
+    @apply bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-6 py-2.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50 hover:scale-105 active:scale-95;
+}
+
+/* Button Secondary (Ghost) */
+.btn-secondary {
+    @apply border border-slate-600 text-white hover:border-slate-500 hover:bg-white/5 px-6 py-2.5 rounded-xl transition-all duration-300;
+}
+
+/* Button Tertiary (Icon) */
+.btn-icon {
+    @apply w-10 h-10 rounded-xl flex items-center justify-center hover:bg-white/10 transition-colors duration-300;
+}
+
+/* ========== INPUT VARIANTS ========== */
+
+/* Input Primary */
+.input-primary {
+    @apply w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 shadow-sm;
+}
+
+/* Input with Label */
+.input-group {
+    @apply space-y-2;
+}
+
+.input-group label {
+    @apply block text-sm font-semibold text-slate-300;
+}
+
+/* ========== BADGE & TAGS ========== */
+
+.badge-primary {
+    @apply inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs font-medium border border-blue-500/30;
+}
+
+.badge-success {
+    @apply inline-flex items-center gap-2 bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs font-medium border border-green-500/30;
+}
+
+.badge-danger {
+    @apply inline-flex items-center gap-2 bg-red-500/20 text-red-300 px-3 py-1 rounded-full text-xs font-medium border border-red-500/30;
+}
+
+/* ========== LOADING STATES ========== */
+
+.spinner {
+    @apply w-6 h-6 border-2 border-slate-600 border-t-cyan-400 rounded-full animate-spin;
+}
+
+.skeleton {
+    @apply bg-gradient-to-r from-slate-800 to-slate-700 rounded-2xl animate-pulse;
+}
+
+.skeleton-text {
+    @apply bg-slate-800 h-4 rounded w-full mb-2;
+}
+
+/* ========== TEXT UTILITIES ========== */
+
+.text-gradient-blue {
+    @apply bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent;
+}
+
+.text-gradient-purple {
+    @apply bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent;
+}
+
+.text-muted {
+    @apply text-slate-500 text-sm;
+}
+
+.text-caption {
+    @apply text-xs font-medium tracking-wider text-slate-500 uppercase;
+}
+
+/* ========== LAYOUT UTILITIES ========== */
+
+.container-max {
+    @apply max-w-7xl mx-auto;
+}
+
+.container-narrow {
+    @apply max-w-4xl mx-auto;
+}
+
+.flex-center {
+    @apply flex items-center justify-center;
+}
+
+.flex-between {
+    @apply flex items-center justify-between;
+}
+
+/* ========== GRID LAYOUTS ========== */
+
+.grid-bento {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.grid-bento > :nth-child(2) {
+    @apply md:col-span-2;
+}
+
+.grid-auto {
+    @apply grid grid-cols-auto gap-4;
+}
+
+/* ========== VISIBILITY ========== */
+
+.hidden-mobile {
+    @apply hidden md:block;
+}
+
+.visible-mobile {
+    @apply block md:hidden;
+}
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes slide-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-in-up {
+    animation: slide-in-up 0.5s ease-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+}
+
+/* ========== EFFECTS ========== */
+
+.backdrop-blur-heavy {
+    @apply backdrop-blur-3xl;
+}
+
+.glass-dark {
+    @apply bg-slate-900/80 backdrop-blur-xl border border-slate-800/50;
+}
+
+.glass-light {
+    @apply bg-white/80 backdrop-blur-xl border border-white/50;
+}
+
+/* ========== HOVER EFFECTS ========== */
+
+.hover-lift-md {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-2;
+}
+
+.hover-glow {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50;
+}
+
+.hover-darken {
+    @apply transition-colors duration-300 hover:bg-slate-700;
+}
+
+/* ========== FOCUS STATES ========== */
+
+.focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500;
+}
+
+.focus-ring-dark {
+    @apply focus:outline-none focus:ring-2 focus:ring-cyan-500;
+}
+
+/* ========== BORDERS ========== */
+
+.border-soft {
+    @apply border-slate-700;
+}
+
+.border-soft-hover {
+    @apply border-soft hover:border-slate-600 transition-colors duration-300;
+}
+
+.border-gradient-cyan {
+    position: relative;
+    border: 1px solid transparent;
+    background-image: 
+        linear-gradient(rgb(15, 23, 42), rgb(15, 23, 42)),
+        linear-gradient(to right, rgb(34, 211, 238), rgb(59, 130, 246));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+/* ========== RESPONSIVE HELPERS ========== */
+
+@media (max-width: 640px) {
+    .px-responsive {
+        @apply px-4;
+    }
+    .py-responsive {
+        @apply py-4 md:py-6;
+    }
+}
+
+@media (min-width: 641px) {
+    .px-responsive {
+        @apply px-6;
+    }
+    .py-responsive {
+        @apply py-6 lg:py-8;
+    }
+}
+
+/* ========== DARK MODE OVERRIDES ========== */
+
+@media (prefers-color-scheme: dark) {
+    .dark-only {
+        @apply block;
+    }
+    .light-only {
+        @apply hidden;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .dark-only {
+        @apply hidden;
+    }
+    .light-only {
+        @apply block;
+    }
+}
+
+/* ========== PRINT STYLES ========== */
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    .print-break {
+        page-break-before: always;
+    }
+}
