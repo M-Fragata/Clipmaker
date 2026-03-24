@@ -1,7 +1,7 @@
 # ClipMaker - Transforme seus Vídeos em Viral Moments
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Node.js-18+-339933?style=flat&logo=node.js" alt="Node.js">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js" alt="Node.js">
   <img src="https://img.shields.io/badge/Frontend-Vanilla_JS-yellow" alt="Vanilla JS">
   <img src="https://img.shields.io/badge/Backend-Express_5.2-000000" alt="Express">
   <img src="https://img.shields.io/badge/AI-Google_Gemini-4285F4" alt="Google Gemini">
@@ -211,7 +211,3 @@ Para melhorias no projeto:
 ## 📝 Licença
 
 ISC License - Veja o arquivo LICENSE para detalhes.
-
----
-
-**Feito com ❤️ e IA para criar viral moments!**
