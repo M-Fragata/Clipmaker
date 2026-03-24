@@ -1,7 +1,7 @@
 # ClipMaker - Transforme seus Vídeos em Viral Moments
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Node.js-18+-339933?style=flat&logo=node.js" alt="Node.js">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js" alt="Node.js">
   <img src="https://img.shields.io/badge/Frontend-Vanilla_JS-yellow" alt="Vanilla JS">
   <img src="https://img.shields.io/badge/Backend-Express_5.2-000000" alt="Express">
   <img src="https://img.shields.io/badge/AI-Google_Gemini-4285F4" alt="Google Gemini">
@@ -17,14 +17,18 @@ A aplicação possui uma interface moderna com design glassmorphism, animações
 
 ### Screenshots da Aplicação
 
+**Interface principal com campo para API Key e área de upload**
 ![Tela Principal](screenshots/home-page.png)
-*Interface principal com campo para API Key e área de upload*
 
-![Status de Processamento](screenshots/processing.png)
-*Status em tempo real durante transcrição e análise*
 
-![Resultado do Vídeo](screenshots/result.png)
+**Status em tempo real durante transcrição e análise**
+<img width="1280" height="839" alt="{D10F8ACD-8FA5-4130-83C3-CB0D10744F45}" src="https://github.com/user-attachments/assets/2d652d4a-87a7-4253-ae90-34b26cab4503" />
+
+
 *Vídeo processado com opção de download*
+<img width="1267" height="940" alt="{07165B30-40AF-44AB-B24A-14222E4CE474}" src="https://github.com/user-attachments/assets/c5a257db-5109-4ffa-8690-d2b85de38b3e" />
+
+
 
 ## ✨ Funcionalidades
 
@@ -213,7 +217,3 @@ Para melhorias no projeto:
 ## 📝 Licença
 
 ISC License - Veja o arquivo LICENSE para detalhes.
-
----
-
-**Feito com ❤️ e IA para criar viral moments!**
