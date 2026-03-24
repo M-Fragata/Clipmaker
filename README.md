@@ -72,6 +72,8 @@ clipmaker/
 ├── frontend/
 │   └── src/
 │       ├── index.html                   # Página principal
+│       ├── assets/                       # Imagens e ícones
+│       │   └── video.png                 # Ícone do app
 │       ├── styles/
 │       │   ├── index.css                # Design system e variáveis
 │       │   └── components.css           # Componentes UI
