@@ -16,6 +16,7 @@ export async function sendGemini(url) {
 
         const data = await response.json()
         console.log("Resposta do Gemini recebida:", data)
+        
         return data
 
     } catch (error) {

@@ -21,9 +21,13 @@ const myWidget = cloudinary.createUploadWidget({
 
         const url = await waitForTranscription(data, cloudName)
 
-        if(!url) return alert("URL not found")
+        if (!url) return alert("URL not found")
 
-        await sendGemini(url)
+        const viralMoment = await sendGemini(url)
+        const viralMomentURL = `https://res.cloudinary.com/${cloudName}/${data.resource_type
+            }/upload/${viralMoment.viralMoment}/${data.public_id}.mp4`
+
+        console.log(viralMomentURL)
 
     }
 }
